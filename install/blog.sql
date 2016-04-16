@@ -216,9 +216,64 @@ UNLOCK TABLES;
 
 
 
+# Dump of table dict
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `dict`;
+
+CREATE TABLE `dict` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL DEFAULT '' COMMENT '字典名称',
+  `value` varchar(5) NOT NULL DEFAULT '' COMMENT '值',
+  `parent_value` varchar(5) NOT NULL DEFAULT '' COMMENT '父类型的值',
+  `sort` int(11) NOT NULL DEFAULT '0' COMMENT '排序',
+  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `is_active` int(11) NOT NULL DEFAULT '1' COMMENT '1启用，0禁用',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+# Dump of table investor
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `investor`;
+
+CREATE TABLE IF NOT EXISTS `investor` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `realname` varchar(255) NOT NULL DEFAULT '' COMMENT '姓名',
+  `avatar` varchar(500) NOT NULL DEFAULT '2.png' COMMENT '头像文件名称',
+  `phone` varchar(255) NOT NULL DEFAULT '' COMMENT '电话号码',
+  `mobile` varchar(50) NOT NULL DEFAULT '' COMMENT '手机号码',
+  `email` varchar(255) NOT NULL DEFAULT '' COMMENT '邮箱',
+  `wechat` varchar(50) NOT NULL DEFAULT '' COMMENT '微信号码',
+  `qq` varchar(255) NOT NULL DEFAULT '' COMMENT 'qq号码',
+  `gender` enum('f','m') NOT NULL DEFAULT 'm' COMMENT 'm表示男，f表示女' ,
+  `id_number` varchar(255) NOT NULL DEFAULT '' COMMENT '身份证号码',
+  `id_card` varchar(500) NOT NULL DEFAULT '' COMMENT '身份证图片',
+  `business_card` varchar(500) NOT NULL DEFAULT '' COMMENT '个人名片',
+  `province_code` varchar(11) NOT NULL DEFAULT '' COMMENT '省份代码',
+  `city_code` varchar(11) NOT NULL DEFAULT '' COMMENT '城市代码',
+  `address` varchar(255) NOT NULL DEFAULT '' COMMENT '地址',
+  `detail_address` varchar(11) NOT NULL DEFAULT '' COMMENT '详细地址',
+  `hobby` varchar(255) NOT NULL DEFAULT '' COMMENT '爱好',
+  `graduate_name` varchar(255) NOT NULL DEFAULT '' COMMENT '最高学历学校名称',
+  `graduate_time` timestamp NULL DEFAULT NULL COMMENT '最高学历学校名称',
+  `highest_degree` varchar(255) NOT NULL DEFAULT '' COMMENT '最高学历',
+  `company` varchar(255) NOT NULL DEFAULT '' COMMENT '目前所在公司',
+  `position` varchar(255) NOT NULL DEFAULT '' COMMENT '目前所在公司的职位',
+  `job` varchar(255) NOT NULL DEFAULT '' COMMENT '目前所在公司的工作职责',
+  `description` varchar(255) NOT NULL DEFAULT '' COMMENT '个人描述',
+  `start_invest_time` timestamp NULL DEFAULT NULL COMMENT '开始投资时间',
+  `update_time` timestamp NULL DEFAULT NULL COMMENT '最后更新时间',
+  `type` int(11) DEFAULT '0' COMMENT '类型：普通、天使、机构、机构和个人、CEO等',
+  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+

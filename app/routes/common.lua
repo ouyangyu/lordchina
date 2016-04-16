@@ -11,7 +11,7 @@ local function topics_category_handler(current_category, req, res, next)
     local user_count = user_model:get_total_count()
 
     local diff_days, diff = utils.days_after_registry(req)
-
+	--[[res:send("hello world!")]]
     res:render("index", {
     	diff_days = diff_days,
     	diff = diff,

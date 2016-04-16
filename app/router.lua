@@ -9,6 +9,8 @@ local upload_router = require("app.routes.upload")
 local category_router = require("app.routes.category")
 local notification_router = require("app.routes.notification")
 local error_router = require("app.routes.error")
+local dict_router = require("app.routes.dict")
+local investor_router = require("app.routes.investor")
 
 return function(app)
     app:use("/auth", auth_router())
@@ -19,7 +21,9 @@ return function(app)
     app:use("/topics", topics_router())
     app:use("/comment", comment_router())
     app:use("/comments", comments_router())
-    
+    app:use("/dict", dict_router())
+    app:use("/investor", investor_router())
+
     app:use("/notification", notification_router())
     app:use("/upload", upload_router())
 

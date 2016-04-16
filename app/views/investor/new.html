@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>潜力股 &raquo; 新建投资人</title>
+    {(meta.html)}
+    <link rel="stylesheet" media="screen" href="/static/css/jquery.fileupload.css"/>
+    <link rel="stylesheet" media="screen" href="/static/css/jquery.fileupload-ui.css"/>
+</head>
+<body>
+{(header.html)}
+
+<div id="main" class="main-container container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    新建投资人
+                </div>
+                <div class="panel-body">
+                    <form class="simple_form form-horizontal" action="#">
+                        <div class="form-group string optional investor_realname col-md-6">
+                            <label class="string optional control-label col-sm-3" for="investor_realname">
+                                姓名
+                            </label>
+                            <div class="col-sm-9">
+                                <input class="string realname optional span4 form-control"
+                                       type="text" placeholder="请填写真实姓名"  name="realname">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group email optional investor_email col-md-6">
+                            <label class="email optional control-label col-sm-3" for="investor_email">
+                                Email
+                            </label>
+                            <div class="col-sm-9">
+                                <input class="string email optional span4 form-control"
+                                type="email" placeholder="请填写邮箱"  name="email">
+                            </div>
+                        </div>
+                        <div class="form-group string optional investor_mobile col-md-6">
+                            <label class="string optional control-label col-sm-3" for="investor_mobile">
+                                手机
+                            </label>
+                            <div class="col-sm-9">
+                                <input class="string optional form-control"  placeholder="请填写手机号码" type="text" name="mobile">
+                            </div>
+                        </div>
+                        <div class="form-group string optional investor_phone col-md-6">
+                            <label class="string optional control-label col-sm-3" for="investor_phone">
+                                电话
+                            </label>
+                            <div class="col-sm-9">
+                                <input class="string optional form-control"  placeholder="请填写电话号码" type="text" name="phone">
+                            </div>
+                        </div>
+                        <div class="form-group string optional investor_wechat col-md-6">
+                            <label class="string optional control-label col-sm-3" for="investor_wechat">
+                                微信
+                            </label>
+                            <div class="col-sm-9">
+                                <input class="string optional form-control" type="text" name="wechat">
+                            </div>
+                        </div>
+                        <div class="form-group string optional investor_qq col-md-6">
+                            <label class="string optional control-label col-sm-3" for="investor_qq">
+                                QQ
+                            </label>
+                            <div class="col-sm-9">
+                                <input class="string optional form-control" type="text" name="qq">
+                            </div>
+                        </div>
+                        <div class="form-group string optional investor_gender col-md-6">
+                            <label class="string optional control-label col-sm-3" for="investor_gender">
+                                性别
+                            </label>
+
+                            <div class="col-sm-9">
+                                <label class="radio-inline">
+                                    <input type="radio" name="gender"value="m">男
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="gender"  value="f">女
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group string optional investor_id_number col-md-6">
+                            <label class="string optional control-label col-sm-3" for="investor_id_number">
+                                身份证号码
+                            </label>
+                            <div class="col-sm-9">
+                                <input class="string optional form-control" placeholder="请填写大陆身份证号" type="text" name="id_number">
+                            </div>
+                        </div>
+                        <div class="form-group string optional investor_company col-md-6">
+                            <label class="string optional control-label col-sm-3" for="investor_company">
+                                公司
+                            </label>
+                            <div class="col-sm-9">
+                                <input class="string optional form-control" placeholder="目前所在公司" type="text" value="" name="company">
+                            </div>
+                        </div>
+                        <div class="form-group string optional col-md-6">
+                            <label class="string optional control-label col-sm-3" for="user_position">
+                                职位
+                            </label>
+                            <div class="col-sm-9">
+                                <input class="string optional form-control" placeholder="目前所在公司的职位" type="text" name="position"
+                                value="">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group string optional user_job  col-md-6">
+                            <label class="string optional control-label col-sm-3" for="user_job">
+                                工作职责
+                            </label>
+                            <div class="col-sm-9">
+                                <input placeholder="目前所在公司的职责描述" class="string optional form-control" type="text"
+                                value="" name="website">
+                            </div>
+                        </div>
+                        <div class="form-group string optional user_description col-md-6">
+                            <label class="string optional control-label col-sm-3" for="user_description">
+                                简单介绍
+                            </label>
+                            <div class="col-sm-9">
+                                <input class="string optional form-control" type="text" name="sign" value="">
+                            </div>
+
+                        </div>
+                        <div class="form-group col-md-12">
+                            <div class="col-sm-4 col-sm-offset-6">
+                                <a href="javascript:void(0);" class="btn btn-primary" id="edit-user-btn">
+                                    提交资料
+                                </a>
+                            </div>
+                        </div>
+                        <div class="form-group" style="display: none;" id="edit-user-result">
+                            <div class="col-sm-10 col-sm-offset-2">
+                                <div class="alert alert-danger" role="alert"></div>
+                            </div>
+                        </div>
+                    </form>
+
+                    <div class="col-sm-3">
+                        <form class="simple_form form-horizontal ">
+                            <div class="form-group file optional investor_avatar">
+                                <div class="row fileupload-buttonbar" style="padding-left:15px;">
+                                    <div class="thumbnail">
+                                        <img id="avatar_show" src="/static/files/5ca43835-f041-4ad1-82d4-c1c137f52bbf.jpg"/>
+                                        <div id="avatar_upload_progress_bar" class="progress progress-striped active" role="progressbar" aria-valuemin="10" aria-valuemax="100" aria-valuenow="0">
+                                            <div id="avatar_upload_progress" class="progress-bar progress-bar-success" style="width:0%;">
+                                            </div>
+                                        </div>
+                                        <div class="caption" align="center">
+                                                <span class="btn btn-primary fileinput-button">
+                                                    <span>上传头像</span>
+                                                    <input type="file" id="avatar_image" name="avatar_image" multiple="">
+                                                </span>
+                                        </div>
+                                    </div>
+
+                                    <div style="text-align: center;width: 100%;" id="upload_result_tip"></div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <form class="simple_form form-horizontal ">
+                        <div class="thumbnail col-md-3 col-sm-offset-2">
+                            <img id="business_card_show" src="/static/files/5ca43835-f041-4ad1-82d4-c1c137f52bbf.jpg"/>
+                            <div id="business_card_upload_progress_bar" class="upload_progress_bar progress progress-striped active" role="progressbar" aria-valuemin="10" aria-valuemax="100" aria-valuenow="0">
+                                <div id="business_card_upload_progress" class="progress-bar progress-bar-success" style="width:0%;">
+                                </div>
+                            </div>
+                            <div class="caption" align="center">
+                                                    <span class="btn btn-primary fileinput-button">
+                                                        <span>上传名片</span>
+                                                        <input type="file" id="business_card_image" multiple="">
+                                                    </span>
+                            </div>
+                            <div style="text-align: center;width: 100%;" id="business_result_tip"></div>
+                            <input id="business_card" type="hidden" name="business_card" value="">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<script src="/static/js/jquery.ui.widget.js"></script>
+<script src="/static/js/jquery.fileupload.js"></script>
+<script src="/static/js/jquery.iframe-transport.js"></script>
+<script type="text/javascript">
+
+    function initUploader() {
+        $("#avatar_image").fileupload({
+            url: '/upload/file',
+            sequentialUploads: true,
+            fail: function(e, data) {
+                APP.Common.showTipDialog("提示",'上传文件发生错误，只允许jpe/jpeg/png/gif/bmp文件，大小不超过2M.');
+            },
+        }).bind('fileuploadprogress', function (e, data) {
+            var progress = parseInt(data.loaded / data.total * 100, 10);
+            $("#avatar_upload_progress").css('width',progress + '%');
+            $("#avatar_upload_progress").html(progress + '%');
+        }).bind('fileuploaddone', function (e, data) {
+            //console.dir(data.result)
+            var result = data.result || {};
+            if(result.success && result.filename){
+                var file_path = "/static/files/" + result.filename;
+                $("#avatar").val(file_path);
+                $("#avatar_show").attr("src",file_path);
+                $("#upload_result_tip").html('');
+            }else{
+                APP.Common.showTipDialog("提示",'上传文件失败'  + (result.msg?": "+result.msg:"")+ '，只允许jpe/jpeg/png/gif/bmp文件，大小不超过2M.');
+            }
+        });
+    }
+    $(document).ready(function(){
+        APP.Common.resetNav();
+        initUploader();
+    });
+</script>
+ 
+
+
+{(footer.html)}
+</body>
+</html>

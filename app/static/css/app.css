@@ -79,6 +79,10 @@
 	width:140px;
 	margin:0 auto;
 }
+.upload_progress_bar{
+	width:140px;
+	margin:0 auto;
+}
 
 a.btn-tiny {
 	padding: 0 8px;
@@ -150,6 +154,12 @@ a.btn-tiny {
 /* user-index page stop*/
 
 #avatar_show {
+	height:140px;
+	width:140px;
+	margin-top:10px;
+	margin-bottom:8px;
+}
+#business_card_show {
 	height:140px;
 	width:140px;
 	margin-top:10px;
